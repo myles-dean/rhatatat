@@ -29,3 +29,7 @@ nav ul li a {
 main {
     padding: 20px;
 }
+
+main img{
+    width: 100%;
+}
