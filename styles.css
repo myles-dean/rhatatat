@@ -164,7 +164,40 @@ nav ul li a:hover {
         width: 100%;
     }
   }
-  
+            .svg-marquee-container {
+              /* Ensures the marquee spans full width and anything overflowing is hidden. */
+              position: absolute;
+              width: 100%;
+              overflow: hidden;
+              /* If you want to remove extra padding inside Squarespace’s code block, you can also do: */
+              margin: 0; padding: 0;
+              opacity: .1;
+              bottom: -100px;
+            }
+          
+            .svg-marquee {
+              display: flex;            /* Place the two SVGs side by side */
+              width: 200%;             /* Twice the width so two SVGs fit in one row */
+              animation: slide-left 15s linear infinite; /* Adjust the duration (15s) as desired */
+            }
+          
+            .svg-marquee svg {
+              /* Each <svg> is half the container width, so two fill the entire width. */
+              width: 50%;
+              min-width: 50%;
+              height: auto;
+              display: block;
+            }
+          
+            @keyframes slide-left {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                /* Move left by 50% of the container, so the second SVG takes over seamlessly */
+                transform: translateX(-50%);
+              }
+            }
   .section2 {
     width: 100%;
     height: 100vh; /* can adjust as desired */
