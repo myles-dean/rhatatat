@@ -23,6 +23,14 @@ align-items: center;
 }
 .headerlogo{
     transition: 0.6s cubic-bezier(.33, 1, .68, 1);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 20px;
+}
+.headerlogo svg{
+    width: 200px;
+    height: 100px;
 }
 .headerlogo:hover {
     opacity: .5;
@@ -56,30 +64,161 @@ align-items: center;
     background-color: transparent;
     border-color: #4A69E5;
 }
-nav ul {
-    list-style: none;
-    padding: 0;
-}
+.mrnw-menu {
+    background-color: black;
+    border-radius: 12px;
+    
+    
+    display: none;
+    flex-wrap: wrap;
+    color: #fff;
+    position: fixed;
+    left: 20px;
+    top: 70px;
+    padding: 0px 20px 8px 20px;
+    gap: 0px 15px;
+    opacity: 0;
+    border-style: solid;
+border-width: 2px;
+border-color: rgba( 255, 255, 255, 25%);
+transition: 0.6s cubic-bezier(.33, 1, .68, 1);
+  }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
+  .mrnw-menu.show {
+    display: flex;
+    opacity: 1; /* Fade in */
+  }
 
-nav ul li a {
-    color: white;
+  .mrnw-menu.hide {
+    opacity: 0; /* Fade out */
+  }
+
+  .mrnw-menu-column {
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    flex: 1;
+z-index: 2;
+position: relative;
+  }
+
+
+
+  .mrnw-menu h3 {
+    color: #7E7C7E;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .mrnw-menu a {
+    color: #fff; /* White for links */
     text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
     transition: 0.6s cubic-bezier(.33, 1, .68, 1);
-}
-nav ul li a:hover {
+  }
+
+  .mrnw-menu a:hover {
     color: #4A69E5;
+  }
+
+  /* MENU BUTTON STYLING */
+  .mrnwburger-menubutton {
+border-style: solid;
+border-width: 2px;
+border-color: rgba(255, 255, 255, 25%);
+display: inline-flex; /* Inline-flex ensures content stays on one line */
+align-items: center; /* Vertical alignment */
+gap: 10px 0px; /* Space between the menu icon and text */
+background-color: black;
+padding: 10px 15px 8px 15px;
+border-radius: 500px;
+
+cursor: pointer;
+text-decoration: none;
+transition: 0.6s cubic-bezier(.33, 1, .68, 1);
+ /* Ensure enough room for text and icon */
+white-space: nowrap; /* Prevent text wrapping */
 }
 
+.mrnwburger-container {
+display: flex; /* Flexbox for alignment */
+align-items: center; /* Center vertically */
+gap: 10px; /* Space between burger menu and text */
+}
+  
 
+  .mrnwburger-menubutton:hover .line {
+    background-color: white;
+  }
+
+  .mrnwburger-menubutton:hover {
+    background-color: #4A69E5;
+  }
+
+  .mrnwburger-menubutton p {
+    color: white;
+    font-family: 'Metropolis';
+    font-weight: 700;
+    margin: 0;
+    transition: 300ms;
+  }
+
+
+  .mrnwburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 18px;
+    height: 14px;
+    position: relative;
+    top: -1px;
+  }
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #7E7C7E;
+    transition: 0.6s cubic-bezier(.33, 1, .68, 1);
+  }
+
+  /* Toggle animations */
+  .mrnwburger-menu.active .line:nth-child(1) {
+    transform: translateY(5px) rotate(45deg);
+  }
+
+  .mrnwburger-menu.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mrnwburger-menu.active .line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .mrnwburger-menubutton.active {
+    background-color: #4A69E5; /* Same as hover effect */
+  }
+
+  .mrnwburger-menubutton.active p {
+    color: white; /* Same as hover effect */
+  }
+
+  .mrnwburger-menubutton.active .line {
+    background-color: white; /* Same as hover effect */
+  }
+  @media screen and (max-width: 900px) {
+    .mrnwburger-menubutton p {
+      display: none;
+    }
+  .mrnwburger-menubutton {
+ 
+    }
+}
   
   .hero {
+    overflow-y: visible;
     position: relative; /* To allow absolutely positioned elements inside */
     width: 100%;
     height: 100vh;
@@ -138,12 +277,13 @@ nav ul li a:hover {
   /* Names at the bottom of the hero image */
   .hero-names {
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 6rem;
     color: #fff;
+    font-weight: 700;
     pointer-events: auto; /* so you can select the text if you want */
   }
   
@@ -168,7 +308,8 @@ nav ul li a:hover {
               /* Ensures the marquee spans full width and anything overflowing is hidden. */
               position: absolute;
               width: 100%;
-              overflow: hidden;
+              overflow-y: visible !important;
+                overflow-x: hidden;
               /* If you want to remove extra padding inside Squarespace’s code block, you can also do: */
               margin: 0; padding: 0;
               opacity: .1;

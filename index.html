@@ -8,20 +8,34 @@
 </head>
 <body>
     <header>
+        <a class="headerlogo" href="index.html">
+            <svg>
+                <use xlink:href="#logo"></use>
+            </svg>
+        </a>
         <div class="headercontainer">
-            <a class="headerlogo" href="index.html">
-                <svg width="125" height="46">
-                    <use xlink:href="#logo"></use>
-                </svg>
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#calendar">Calendar</a></li>
-                    <li><a href="#booking">Booking</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                </ul>
-            </nav>
+            <a class="mrnwburger-menubutton" id="mrnwburger-menubutton">
+                <div class="mrnwburger-container">
+                  <div class="mrnwburger-menu" id="mrnwburger-menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                  </div>
+                  <p>MENU</p>
+                </div>
+              </a>
+            
+              <!-- Hidden Menu -->
+              <div class="mrnw-menu" id="mrnw-menu-content">
+                <div class="mrnw-menu-column" id="mrnw-menu-column1">
+                  <h3>HOME</h3>
+                  <a href="#">EVENTS</a>
+                  <a href="#">BOOK</a>
+                  <a href="#">ABOUT</a>
+                  <a href="#">GALLERY</a>
+                </div>
+              </div>
+            
             <div class="header-right">
                 <a href="https://www.facebook.com/share/14s2NzG1u9/?mibextid=wwXIfr" class="header-facebook">
                     <svg width="18" height="18">
@@ -81,12 +95,6 @@
           </clipPath>
           </defs>
           </svg>
-          
-          
-          
-          
-          
-              <!-- SECOND COPY OF YOUR SVG -->
           <svg class="wavy-lines" width="1456" height="453" viewBox="0 0 1456 453" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_6300_578)">
           <mask id="mask0_6300_578" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="1456" height="453">
@@ -123,15 +131,16 @@
           </svg>
          </div>
         </div>
-        <h1 class="hero-heading">MUSIC THAT SMOOTHES THE SOUL</h1>
+    
       <div class="hero-imgcontainer">
         <img
           src="https://f005.backblazeb2.com/file/Rhatatat/Michael+B+%26+Jon+C+transparent.png"
           alt="Michael B & Jon C"
           class="hero-img"
         />
-        <div class="hero-names">MICHAEL B &amp; JON C</div>
+        
       </div>
+      <div class="hero-names">MICHAEL B<br>&amp; JON C</div> 
     </section>
 
     <section class="section2">
